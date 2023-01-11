@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alarm pro</title>
+    <!--  Favicon    -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!--   CSS   -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="flex">
+    <!-- Welcome Back screen -->
+    <div class="d-none" id="welcomeBack">
+      <h1>Hey! Welcome back</h1>
+      <button id="resumeBtn">Resume alarm</button>
+    </div>
+
+    <!-- Main container -->
+    <div class="wrapper flex">
+      <img src="files/clock.svg" alt="" />
+      <!-- Temporary time -->
+      <h1 id="currentTime">00:00:00</h1>
+      <!-- Main content -->
+      <div id="content">
+        <!-- Hour section -->
+        <div class="column">
+          <select id="hour">
+            <option value="Hour" selected hidden>Hour</option>
+          </select>
+        </div>
+        <!-- Minute Section -->
+        <div class="column">
+          <select id="minute">
+            <option value="Minute" selected hidden>Minute</option>
+          </select>
+        </div>
+        <!-- AM/PM section -->
+        <div class="column">
+          <select id="ampm">
+            <option value="AM/PM" selected hidden>AM/PM</option>
+          </select>
+        </div>
+      </div>
+      <!-- Set alarm Button -->
+      <button id="setBtn"></button>
+      <!-- Alarm time indicator -->
+      <p id="alarmText"></p>
+    </div>
+
+    <!-- Javascript -->
+    <script src="script.js"></script>
+  </body>
+</html>
