@@ -20,7 +20,7 @@ if (!localStorage.getItem('userExited')) {
     }
 }
 
-// Play eingtone continously on resume
+// Play ringtone continously on resume
 if (!localStorage.getItem('wantToPlay')) {
     localStorage.setItem('wantToPlay', 'no');
 }
@@ -86,15 +86,17 @@ const playAlarm = () => {
 
 setInterval(() => {
     let date = new Date();
-    let h = date.getHours();
+    // var h = ((date.getHours() - 12));
+    let h = date.getHours(); 
     let m = date.getMinutes();
     let s = date.getSeconds();
     let ampm = "AM";
 
     // 12 Hour Format
-    if (h > 12) {
-        h = h - 12;
-        ampm = "PM";
+    if (h > 11) {
+    h = h - 12;
+    // ampm = (date.getHours()) < 12 ? 'AM' : 'PM';
+    ampm = 'PM'
     }
 
     // if hour value is 0 then set it to 12
@@ -111,7 +113,6 @@ setInterval(() => {
     if ((localStorage.getItem('alarmTime') == `${h}:${m}:${ampm}`) || (localStorage.getItem('wantToPlay') == 'yes')) {
         playAlarm();
     }
-
 }, 1000);
 
 
